@@ -21,11 +21,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3            &kp N4               &kp N5                                             &kp N6                   &kp N7                &kp N8                           &kp N9   &kp N0    &kp EQUAL
-&kp TAB    &kp Q   &kp W   &kp E             &kp R                &kp T                                              &kp Y                    &kp U                 &kp I                            &kp O    &kp P     &kp MINUS
-&mo 3      &kp A   &kp S   &kp D             &kp F                &kp G                                              &kp H                    &kp J                 &kp K                            &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z   &kp X   &kp C             &kp V                &kp B                   &lt 1 LBKT    &lt 1 RBKT   &kp N                    &kp M                 &kp COMMA                        &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LEFT_CONTROL  &mt LEFT_ALT DELETE  &mt LEFT_GUI BACKSPACE  &lt 2 RET     &lt 2 SPACE  &mt RIGHT_GUI BACKSPACE  &mt RIGHT_ALT DELETE  &mt RIGHT_CONTROL DOUBLE_QUOTES
+&kp ESC              &kp N1  &kp N2  &kp N3            &kp N4               &kp N5                                             &kp N6                   &kp N7                &kp N8                           &kp N9   &kp N0    &kp EQUAL
+&kp TAB              &kp Q   &kp W   &kp E             &kp R                &kp T                                              &kp Y                    &kp U                 &kp I                            &kp O    &kp P     &kp MINUS
+&lt 3 LG(LS(SPACE))  &kp A   &kp S   &kp D             &kp F                &kp G                                              &kp H                    &kp J                 &kp K                            &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT            &kp Z   &kp X   &kp C             &kp V                &kp B                   &lt 1 LBKT    &lt 1 RBKT   &kp N                    &kp M                 &kp COMMA                        &kp DOT  &kp FSLH  &kp RSHFT
+                                     &kp LEFT_CONTROL  &mt LEFT_ALT DELETE  &mt LEFT_GUI BACKSPACE  &lt 2 RET     &lt 2 SPACE  &mt RIGHT_GUI BACKSPACE  &mt RIGHT_ALT DELETE  &mt RIGHT_CONTROL DOUBLE_QUOTES
             >;
         };
 
@@ -44,6 +44,8 @@
 &bt BT_CLR     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp TILDE2        &kp PIPE       &kp BACKSLASH  &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES      &mt RIGHT_SHIFT CAPS
                                            &trans        &trans        &trans        &trans    &trans  &trans            &trans         &trans
             >;
+
+            label = "functions";
         };
 
         arrows {
@@ -54,6 +56,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans          &trans         &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans
             >;
+
+            label = "arrows";
         };
 
         keypad {
@@ -64,6 +68,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &trans
                         &trans  &trans  &trans  &trans    &kp ENTER  &kp N0     &trans        &kp PERIOD
             >;
+
+            label = "keypad";
         };
     };
 };
