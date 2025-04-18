@@ -50,11 +50,11 @@
 
         arrows {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp HOME  &trans          &kp PAGE_UP    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp END   &kp UP          &kp PAGE_DOWN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans          &trans         &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans
+&trans         &trans         &kp LC(LA(D))     &kp LC(LA(F))     &kp LC(LA(G))      &trans                           &trans  &kp HOME  &trans          &kp PAGE_UP    &trans  &trans
+&trans         &trans         &kp LC(LA(U))     &kp LC(LA(UP))    &kp LC(LA(I))      &trans                           &trans  &kp END   &kp UP          &kp PAGE_DOWN  &trans  &trans
+&kp LC(LA(E))  &kp LC(LA(R))  &kp LC(LA(LEFT))  &kp LC(LA(C))     &kp LC(LA(RIGHT))  &kp LC(LA(T))                    &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT      &trans  &trans
+&trans         &trans         &kp LC(LA(J))     &kp LC(LA(DOWN))  &kp LC(LA(K))      &trans         &trans    &trans  &trans  &trans    &trans          &trans         &trans  &trans
+                                                &trans            &trans             &trans         &trans    &trans  &trans  &trans    &trans
             >;
 
             label = "arrows";
