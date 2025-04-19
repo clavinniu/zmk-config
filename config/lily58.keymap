@@ -27,31 +27,37 @@
         tilde {
             bindings = <&kp TILDE>;
             key-positions = <0 1>;
+            layers = <0>;
         };
 
         enterright {
             bindings = <&kp ENTER>;
             key-positions = <31 32 33>;
+            layers = <0>;
         };
 
         enterleft {
             bindings = <&kp ENTER>;
             key-positions = <28 27 26>;
+            layers = <0>;
         };
 
         quotes {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <34 33>;
+            layers = <0>;
         };
 
         pipe {
             bindings = <&kp BACKSLASH>;
             key-positions = <22 23>;
+            layers = <0>;
         };
 
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <10 11>;
+            layers = <0>;
         };
     };
 
