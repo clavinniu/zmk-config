@@ -59,6 +59,11 @@
             key-positions = <10 11>;
             layers = <0>;
         };
+
+        enterthumbs {
+            bindings = <&kp ENTER>;
+            key-positions = <53 54>;
+        };
     };
 
     keymap {
@@ -79,6 +84,8 @@
 &kp LSHFT            &kp Z             &kp X               &kp C                   &kp V                &lt 3 B           &lt 1 LBKT     &lt 1 RBKT   &lt 3 N                  &kp M                       &kp COMMA                    &kp DOT              &kp FSLH              &kp RSHFT
                                                            &mt LEFT_CONTROL TILDE  &mt LEFT_ALT DELETE  &mt LEFT_GUI TAB  &lt 2 SPACE    &lt 2 SPACE  &mt RIGHT_GUI BACKSPACE  &mt RIGHT_ALT SINGLE_QUOTE  &mt RIGHT_CONTROL BACKSLASH
             >;
+
+            label = "base";
         };
 
         functions-media {
@@ -100,7 +107,7 @@
             label = "functions-media";
         };
 
-        windows-arrows {
+        arrows-windows {
             bindings = <
 &trans         &trans         &kp LC(LA(D))     &kp LC(LA(F))     &kp LC(LA(G))      &trans                           &trans  &kp HOME  &trans          &kp PAGE_UP    &trans  &trans
 &trans         &trans         &kp LC(LA(U))     &kp LC(LA(UP))    &kp LC(LA(I))      &trans                           &trans  &kp END   &kp UP          &kp PAGE_DOWN  &trans  &trans
@@ -109,7 +116,7 @@
                                                 &trans            &trans             &trans         &trans    &trans  &trans  &trans    &trans
             >;
 
-            label = "windows-arrows";
+            label = "arrows";
         };
 
         symbols-keypad {
