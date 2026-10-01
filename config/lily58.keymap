@@ -102,11 +102,11 @@
 
         functions-media {
             bindings = <
-&trans         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6                    &kp F7                     &kp F8                     &kp F9                     &kp F10                   &kp C_VOLUME_UP
-&kp C_BRI_UP   &kp F11       &kp F12       &kp F13       &kp F14       &kp F15                         &kp F16                   &kp F17                    &kp F18                    &kp F19                    &kp F20                   &kp C_VOLUME_DOWN
-&kp C_BRI_DEC  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                          &kp C_PREV                &kp C_REWIND               &kp C_PLAY                 &kp C_FAST_FORWARD         &kp C_NEXT                &kp C_MUTE
-&bt BT_CLR     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp /*=SP 1*/ LC(LS(N1))  &kp /*=SP 2*/ LC(LS(N2))   &kp /*=SP 3*/ LC(LS(N3))   &kp /*=MSN C*/ LC(LS(N4))  &kp /*=DKTP*/ LC(LS(N5))  &mt RIGHT_SHIFT CAPS
-                                           &trans        &trans        &trans        &trans    &trans  &trans                    &trans                     &trans
+&trans                   &kp F1                    &kp F2                    &kp F3                    &kp F4                    &kp F5                                                    &kp F6                     &kp F7                     &kp F8                     &kp F9                     &kp F10                   &kp C_VOLUME_UP
+&kp C_BRI_UP             &kp F11                   &kp F12                   &kp F13                   &kp F14                   &kp F15                                                   &kp F16                    &kp F17                    &kp F18                    &kp F19                    &kp F20                   &kp C_VOLUME_DOWN
+&mt LCTRL LC(LS(N1))     &mt LEFT_SHIFT LC(LS(N2)) &mt LEFT_CONTROL LC(LS(N3)) &mt LEFT_ALT LC(LS(N4)) &mt LEFT_GUI LC(LS(N5))   &trans                                                    &kp /*=SCR_1*/ LS(LG(N1))  &kp /*=SCR_2*/ LS(LG(N2))  &kp /*=SCR_3*/ LS(LG(N3))  &kp /*=SCR_4*/ LS(LG(N4))  &kp /*=SCR_RE*/ LC(LG(N4)) &kp C_MUTE
+&bt BT_CLR               &bt BT_SEL 0              &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &trans                &trans    &kp C_PREV                 &kp C_REWIND               &kp C_PLAY                 &kp C_FAST_FORWARD         &kp C_NEXT                &mt RIGHT_SHIFT CAPS
+                                                                             &trans                    &trans                    &trans                    &trans                &trans    &trans                     &trans                     &trans
             >;
 
             label = "functions-media";
