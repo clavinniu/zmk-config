@@ -10,7 +10,7 @@
 
 &mt {
     tapping-term-ms = <250>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
     quick-tap-ms = <175>;
     require-prior-idle-ms = <0>;
 };
@@ -23,10 +23,6 @@
 };
 
 / {
-    // Both thumbs held together triggers Layer 1 (media/functions)
-
-    conditional_layers { compatible = "zmk,conditional-layers"; };
-
     combos {
         compatible = "zmk,combos";
 
@@ -46,70 +42,58 @@
         compatible = "zmk,keymap";
 
         base {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  HYP  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |  HYP  |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
-
-            bindings = <
-&kp ESC                            &kp N1            &kp N2              &kp N3                  &kp N4               &kp N5                                                  &kp N6                   &kp N7                      &kp N8                       &kp N9               &kp N0                &mt BACKSPACE EQUAL
-&kp TAB                            &kp Q             &kp W               &kp E                   &kp R                &kp T                                                   &kp Y                    &kp U                       &kp I                        &kp O                &kp P                 &kp MINUS
-&mt LA(LC(LS(LGUI))) SINGLE_QUOTE  &mt LEFT_SHIFT A  &mt LEFT_CONTROL S  &mt LEFT_ALT D          &mt LEFT_GUI F       &lt 1 G                                                 &lt 1 H                  &mt RIGHT_GUI J             &mt RIGHT_ALT K              &mt RIGHT_CONTROL L  &mt RIGHT_SHIFT SEMI  &mt RS(RA(RC(RIGHT_GUI))) RET
-&kp LSHFT                          &kp Z             &kp X               &kp C                   &kp V                &lt 3 B                     &lt 4 LBKT     &lt 4 RBKT   &lt 3 N                  &kp M                       &kp COMMA                    &kp DOT              &kp FSLH              &kp RSHFT
-                                                                         &mt LEFT_CONTROL GRAVE  &mt LEFT_ALT DELETE  &mt LEFT_GUI RS(RG(SPACE))  &lt 2 ENTER    &lt 2 SPACE  &mt RIGHT_GUI BACKSPACE  &mt RIGHT_ALT SINGLE_QUOTE  &mt RIGHT_CONTROL BACKSLASH
-            >;
-
             label = "base";
+            bindings = <
+&kp ESC                                   &kp N1            &kp N2              &kp N3                  &kp N4               &kp N5                                                         &kp N6                   &kp N7                      &kp N8                       &kp N9               &kp N0                &mt /*=⌫*/ BACKSPACE EQUAL
+&kp TAB                                   &kp Q             &kp W               &kp E                   &kp R                &kp T                                                          &kp Y                    &kp U                       &kp I                        &kp O                &kp P                 &kp MINUS
+&mt /*=HYP*/ LA(LC(LS(LGUI))) SINGLE_QUOTE &mt /*=⇧*/ LEFT_SHIFT A &mt /*=⌃*/ LEFT_CONTROL S &mt /*=⌥*/ LEFT_ALT D &mt /*=⌘*/ LEFT_GUI F &lt /*=L1*/ 1 G                                         &lt /*=L1*/ 1 H          &mt /*=⌘*/ RIGHT_GUI J      &mt /*=⌥*/ RIGHT_ALT K        &mt /*=⌃*/ RIGHT_CONTROL L   &mt /*=⇧*/ RIGHT_SHIFT SEMI &mt /*=HYP*/ RS(RA(RC(RIGHT_GUI))) RET
+&kp LSHFT                                 &kp Z             &kp X               &kp C                   &kp V                &lt /*=L3*/ 3 B                     &lt /*=L4*/ 4 LBKT &lt /*=L4*/ 4 RBKT &lt /*=L3*/ 3 N          &kp M                       &kp COMMA                    &kp DOT              &kp FSLH              &kp RSHFT
+                                                                                &mt /*=⌃*/ LEFT_CONTROL GRAVE &mt /*=⌥*/ LEFT_ALT DELETE &mt /*=⌘*/ LEFT_GUI RS(RG(SPACE)) &lt /*=L2*/ 2 ENTER &lt /*=L2*/ 2 SPACE &mt /*=⌘*/ RIGHT_GUI BACKSPACE &mt /*=⌥*/ RIGHT_ALT SINGLE_QUOTE &mt /*=⌃*/ RIGHT_CONTROL BACKSLASH
+            >;
         };
 
         numbers-special-chars {
-            bindings = <
-&kp F11        &kp F1           &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6        &kp F7    &kp F8         &kp F9                &kp F10                &kp C_VOLUME_UP
-&kp C_BRI_UP   &kp EXCLAMATION  &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT                     &kp CARET     &kp AMPS  &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp C_VOLUME_DOWN
-&kp C_BRI_DEC  &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                          &kp NUMBER_6  &kp N7    &kp N8         &kp N9                &kp N0                 &kp C_MUTE
-&bt BT_CLR     &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp GRAVE     &kp PIPE  &kp BACKSLASH  &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES      &mt RIGHT_SHIFT CAPS
-                                              &trans        &trans        &trans        &trans    &trans  &trans        &trans    &trans
-            >;
-
             label = "numbers-special-chars";
+            bindings = <
+&kp /*=`*/ GRAVE &kp /*=~*/ TILDE    &kp /*=_*/ UNDER    &kp /*=-*/ MINUS    &kp /*==*/ EQUAL    &kp /*=+*/ PLUS                                                &kp /*=[*/ LBKT     &kp /*=]*/ RBKT     &kp /*={*/ LBRC        &kp /*=}*/ RBRC       &kp /*=\*/ BACKSLASH  &kp /*=|*/ PIPE
+&kp /*=§*/ NON_US_SECTION &kp /*=!*/ EXCLAMATION &kp /*=@*/ AT &kp /*=#*/ HASH &kp /*=$*/ DOLLAR &kp /*=%*/ PERCENT                                             &kp /*=^*/ CARET    &kp /*=&*/ AMPS     &kp /*=**/ ASTERISK    &kp /*=(*/ LEFT_PARENTHESIS &kp /*=)*/ RIGHT_PARENTHESIS &kp /*=±*/ PLUS_MINUS
+&trans           &kp /*=1*/ NUMBER_1 &kp /*=2*/ NUMBER_2 &kp /*=3*/ NUMBER_3 &kp /*=4*/ NUMBER_4 &kp /*=5*/ N5                                                  &kp /*=6*/ NUMBER_6 &kp /*=7*/ N7       &kp /*=8*/ N8          &kp /*=9*/ N9         &kp /*=0*/ N0         &trans
+&bt /*=CLR*/ BT_CLR &bt BT_SEL 0     &bt BT_SEL 1        &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4        &trans                  &trans                 &kp /*=:*/ COLON    &kp /*=;*/ SEMI     &kp /*='*/ APOSTROPHE  &kp /*="*/ DOUBLE_QUOTES &kp /*=<*/ LESS_THAN  &kp /*=>*/ GREATER_THAN
+                                                                             &trans              &trans              &trans                  &trans   &trans        &trans              &trans              &trans
+            >;
         };
 
         arrows-windows {
-            bindings = <
-&trans  &trans         &kp LC(LA(D))     &kp LC(LA(F))     &kp LC(LA(G))      &trans                           &trans  &kp HOME  &trans          &kp PAGE_UP    &trans  &trans
-&trans  &trans         &kp LC(LA(U))     &kp LC(LA(UP))    &kp LC(LA(I))      &trans                           &trans  &kp END   &kp UP          &kp PAGE_DOWN  &trans  &trans
-&trans  &kp LC(LA(E))  &kp LC(LA(LEFT))  &kp LC(LA(C))     &kp LC(LA(RIGHT))  &kp LC(LA(T))                    &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT      &trans  &trans
-&trans  &trans         &kp LC(LA(J))     &kp LC(LA(DOWN))  &kp LC(LA(K))      &trans         &trans    &trans  &trans  &trans    &trans          &trans         &trans  &trans
-                                         &trans            &trans             &trans         &trans    &trans  &trans  &trans    &trans
-            >;
-
             label = "arrows";
+            bindings = <
+&trans  &trans                  &kp /*=⅓-LEFT*/ LC(LA(D))    &kp /*=⅓-CTR*/ LC(LA(F))      &kp /*=⅓-RIGHT*/ LC(LA(G))   &trans                                                      &trans  &kp HOME        &trans                &kp PAGE_UP    &trans  &trans
+&trans  &trans                  &kp /*=TOP-LFT*/ LC(LA(U))   &kp /*=▲-TOP*/ LC(LA(UP))     &kp /*=TOP-RGT*/ LC(LA(I))   &trans                                                      &trans  &kp END         &kp /*=▲*/ UP         &kp PAGE_DOWN  &trans  &trans
+&trans  &kp /*=⅔-LEFT*/ LC(LA(E)) &kp /*=LEFT*/ LC(LA(LEFT)) &kp /*=MAX*/ LC(LA(C))        &kp /*=RIGHT*/ LC(LA(RIGHT)) &kp /*=⅔-RGT*/ LC(LA(T))                                    &trans  &kp /*=◀*/ LEFT &kp /*=▼*/ DOWN_ARROW &kp /*=▶*/ RIGHT  &trans  &trans
+&trans  &trans                  &kp /*=BOT-LFT*/ LC(LA(J))   &kp /*=▼-BOT*/ LC(LA(DOWN))   &kp /*=BOT-RGT*/ LC(LA(K))   &trans                     &trans                  &trans   &trans  &trans          &trans                &trans         &trans  &trans
+                                                              &trans                        &trans                       &trans                     &trans                  &trans   &trans  &trans          &trans
+            >;
         };
 
         symbols-keypad {
-            bindings = <
-&trans           &trans       &trans             &trans            &trans             &trans                           &trans     &kp CLEAR     &kp SLASH     &kp ASTRK     &kp MINUS   &trans
-&kp EXCLAMATION  &kp AT_SIGN  &kp TILDE          &kp LESS_THAN     &kp GREATER_THAN   &kp BACKSLASH                    &kp ASTRK  &kp N7        &kp N8        &kp N9        &kp PLUS    &trans
-&kp HASH         &kp DOLLAR   &kp DOUBLE_QUOTES  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp SLASH                        &kp SLASH  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS   &trans
-&kp PERCENT      &kp CARET    &kp APOSTROPHE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp QUESTION   &trans    &trans  &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &trans
-                                                 &trans            &trans             &trans         &trans    &trans  &trans     &kp N0        &kp PERIOD
-            >;
-
             label = "symbols-keypad";
+            bindings = <
+&trans             &trans        &trans               &trans              &trans               &trans                           &trans     &kp /*=CLR*/ CLEAR &kp SLASH          &kp /*=**/ ASTRK   &kp MINUS          &trans
+&kp /*=!*/ EXCLAMATION &kp /*=@*/ AT_SIGN &kp /*=~*/ TILDE     &kp /*=<*/ LESS_THAN &kp /*=>*/ GREATER_THAN &kp BACKSLASH       &kp /*=**/ ASTRK &kp N7             &kp N8             &kp N9             &kp PLUS           &trans
+&kp /*=#*/ HASH    &kp /*=$*/ DOLLAR &kp /*="*/ DOUBLE_QUOTES &kp /*={*/ LEFT_BRACE &kp /*=}*/ RIGHT_BRACE &kp SLASH           &kp SLASH  &kp /*=4*/ NUMBER_4 &kp N5             &kp /*=6*/ NUMBER_6 &kp MINUS          &trans
+&kp /*=%*/ PERCENT &kp /*=^*/ CARET &kp /*='*/ APOSTROPHE &kp /*=[*/ LEFT_BRACKET &kp /*=]*/ RIGHT_BRACKET &kp /*=?*/ QUESTION &trans &trans &kp N0     &kp /*=1*/ NUMBER_1 &kp /*=2*/ NUMBER_2 &kp /*=3*/ NUMBER_3 &kp PERIOD         &trans
+                                                      &trans              &trans               &trans                           &trans     &trans  &trans            &kp N0             &kp PERIOD
+            >;
         };
 
         functions-media {
-            bindings = <
-&trans                   &kp F1                    &kp F2                    &kp F3                    &kp F4                    &kp F5                                                    &kp F6                     &kp F7                     &kp F8                     &kp F9                     &kp F10                   &kp C_VOLUME_UP
-&kp C_BRI_UP             &kp F11                   &kp F12                   &kp F13                   &kp F14                   &kp F15                                                   &kp F16                    &kp F17                    &kp F18                    &kp F19                    &kp F20                   &kp C_VOLUME_DOWN
-&mt LCTRL LC(LS(N1))     &mt LEFT_SHIFT LC(LS(N2)) &mt LEFT_CONTROL LC(LS(N3)) &mt LEFT_ALT LC(LS(N4)) &mt LEFT_GUI LC(LS(N5))   &trans                                                    &kp /*=SCR_1*/ LS(LG(N1))  &kp /*=SCR_2*/ LS(LG(N2))  &kp /*=SCR_3*/ LS(LG(N3))  &kp /*=SCR_4*/ LS(LG(N4))  &kp /*=SCR_RE*/ LC(LG(N4)) &kp C_MUTE
-&bt BT_CLR               &bt BT_SEL 0              &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &trans                &trans    &kp C_PREV                 &kp C_REWIND               &kp C_PLAY                 &kp C_FAST_FORWARD         &kp C_NEXT                &mt RIGHT_SHIFT CAPS
-                                                                             &trans                    &trans                    &trans                    &trans                &trans    &trans                     &trans                     &trans
-            >;
-
             label = "functions-media";
+            bindings = <
+&kp /*=BR+*/ C_BRI_UP        &kp F1                    &kp F2                    &kp F3                    &kp F4                    &kp F5                                                    &kp F6                     &kp F7                     &kp F8                     &kp F9                     &kp F10                   &kp /*=VOL+*/ C_VOLUME_UP
+&kp /*=BR-*/ C_BRI_DEC       &kp F11                   &kp F12                   &kp F13                   &kp F14                   &trans                                                    &kp F16                    &kp F17                    &kp F18                    &kp F19                    &kp F20                   &kp /*=VOL-*/ C_VOLUME_DOWN
+&mt /*=SP 1*/ LEFT_SHIFT LC(LS(N1)) &mt /*=SP 2*/ LEFT_CONTROL LC(LS(N2)) &mt /*=SP 3*/ LEFT_ALT LC(LS(N3)) &mt /*=MSN C*/ LEFT_GUI LC(LS(N4)) &kp /*=DKTP*/ LC(LS(N5)) &kp /*=LOUT*/ LS(LG(Q))                       &kp /*=SCR_1*/ LS(LG(N1))  &kp /*=SCR_2*/ LS(LG(N2))  &kp /*=SCR_3*/ LS(LG(N3))  &kp /*=SCR_4*/ LS(LG(N4))  &kp /*=SCR_RE*/ LC(LG(N4)) &kp /*=🔇*/ C_MUTE
+&bt /*=CLR*/ BT_CLR          &bt BT_SEL 0              &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &trans                &trans    &kp /*=⏮*/ C_PREV          &kp /*=⏯*/ C_PP            &kp /*=⏭*/ C_NEXT         &kp /*=🎙️▼*/ F12           &kp /*=🎙️▲*/ F13           &kp /*=🎙️🔇*/ F14
+                                                                                 &studio_unlock            &trans                    &trans                    &trans                &trans    &trans                     &trans                     &trans
+            >;
         };
     };
 };
