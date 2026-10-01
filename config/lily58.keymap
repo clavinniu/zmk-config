@@ -67,15 +67,16 @@
 
         arrows-windows {
             bindings = <
-&trans         &trans         &kp LC(LA(D))     &kp LC(LA(F))     &kp LC(LA(G))      &trans                           &trans  &kp HOME  &trans          &kp PAGE_UP    &trans  &trans
-&trans         &trans         &kp LC(LA(U))     &kp LC(LA(UP))    &kp LC(LA(I))      &trans                           &trans  &kp END   &kp UP          &kp PAGE_DOWN  &trans  &trans
-&kp LC(LA(E))  &kp LC(LA(R))  &kp LC(LA(LEFT))  &kp LC(LA(C))     &kp LC(LA(RIGHT))  &kp LC(LA(T))                    &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT      &trans  &trans
-&trans         &trans         &kp LC(LA(J))     &kp LC(LA(DOWN))  &kp LC(LA(K))      &trans         &trans    &trans  &trans  &trans    &trans          &trans         &trans  &trans
-                                                &trans            &trans             &trans         &trans    &trans  &trans  &trans    &trans
+&trans  &trans                  &kp /*=⅓-LEFT*/ LC(LA(D))     &kp /*=⅓-CTR*/ LC(LA(F))      &kp /*=⅓-RIGHT*/ LC(LA(G))   &trans                                                      &trans  &kp HOME        &trans                &kp PAGE_UP    &trans  &trans
+&trans  &trans                  &kp /*=TOP-LFT*/ LC(LA(U))    &kp /*=▲-TOP*/ LC(LA(UP))     &kp /*=TOP-RGT*/ LC(LA(I))   &trans                                                      &trans  &kp END         &kp /*=▲*/ UP         &kp PAGE_DOWN  &trans  &trans
+&trans  &kp /*=⅔-LEFT*/ LC(LA(E)) &kp /*=LEFT*/ LC(LA(LEFT))  &kp /*=MAX*/ LC(LA(C))        &kp /*=RIGHT*/ LC(LA(RIGHT)) &kp /*=⅔-RGT*/ LC(LA(T))                                    &trans  &kp /*=◀*/ LEFT &kp /*=▼*/ DOWN_ARROW &kp /*=▶*/ RIGHT  &trans  &trans
+&trans  &trans                  &kp /*=BOT-LFT*/ LC(LA(J))    &kp /*=▼-BOT*/ LC(LA(DOWN))   &kp /*=BOT-RGT*/ LC(LA(K))   &trans                     &trans                  &trans   &trans  &trans          &trans                &trans         &trans  &trans
+                                                              &trans                        &trans                       &trans                     &trans                  &trans   &trans  &trans          &trans
             >;
 
             label = "arrows";
         };
+
 
         symbols-keypad {
             bindings = <
