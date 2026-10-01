@@ -1,0 +1,9 @@
+/*
+ * Copyright (c) 2024 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+&nice_view_custom {
+    /* Rotate the display 180 degrees because the Lily58 right PCB is physically flipped */
+    transform = <1>;
+};
