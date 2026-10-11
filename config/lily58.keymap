@@ -70,11 +70,11 @@
         arrows-windows {
             label = "arrows";
             bindings = <
-&trans  &trans                  &kp /*=⅓-LEFT*/ LC(LA(D))    &kp /*=⅓-CTR*/ LC(LA(F))      &kp /*=⅓-RIGHT*/ LC(LA(G))   &trans                                                      &trans  &kp HOME        &trans                &kp PAGE_UP    &trans  &trans
-&trans  &trans                  &kp /*=TOP-LFT*/ LC(LA(U))   &kp /*=▲-TOP*/ LC(LA(UP))     &kp /*=TOP-RGT*/ LC(LA(I))   &trans                                                      &trans  &kp END         &kp /*=▲*/ UP         &kp PAGE_DOWN  &trans  &trans
-&trans  &kp /*=⅔-LEFT*/ LC(LA(E)) &kp /*=LEFT*/ LC(LA(LEFT)) &kp /*=MAX*/ LC(LA(C))        &kp /*=RIGHT*/ LC(LA(RIGHT)) &kp /*=⅔-RGT*/ LC(LA(T))                                    &trans  &kp /*=◀*/ LEFT &kp /*=▼*/ DOWN_ARROW &kp /*=▶*/ RIGHT  &trans  &trans
-&trans  &trans                  &kp /*=BOT-LFT*/ LC(LA(J))   &kp /*=▼-BOT*/ LC(LA(DOWN))   &kp /*=BOT-RGT*/ LC(LA(K))   &trans                     &trans                  &trans   &trans  &trans          &trans                &trans         &trans  &trans
-                                                              &trans                        &trans                       &trans                     &trans                  &trans   &trans  &trans          &trans
+&trans  &kp /*=MV 1*/ LC(LA(LS(N1)))    &kp /*=MV 2*/ LC(LA(LS(N2)))   &kp /*=MV 3*/ LC(LA(LS(N3)))  &kp /*=MV 4*/ LC(LA(LS(N4)))   &kp /*=MV 5*/ LC(LA(LS(N5)))                               &kp /*=MV 6*/ LC(LA(LS(N6))) &kp /*=MV 7*/ LC(LA(LS(N7))) &kp /*=MV 8*/ LC(LA(LS(N8))) &kp /*=MV 9*/ LC(LA(LS(N9))) &kp /*=MV 0*/ LC(LA(LS(N0))) &trans
+&trans  &trans                          &kp /*=TOP-LFT*/ LC(LA(U))     &kp /*=▲-TOP*/ LC(LA(UP))     &kp /*=TOP-RGT*/ LC(LA(I))     &trans                                                      &kp /*=PG-UP*/ PAGE_UP       &kp /*=HOME*/ HOME           &kp /*=▲*/ UP                &kp /*=END*/ END             &trans                       &trans
+&trans  &kp /*=⅔-LEFT*/ LC(LA(E))       &kp /*=LEFT*/ LC(LA(LEFT))     &kp /*=MAX*/ LC(LA(C))        &kp /*=RIGHT*/ LC(LA(RIGHT))   &kp /*=⅔-RGT*/ LC(LA(T))                                    &kp /*=PG-DN*/ PAGE_DOWN     &kp /*=◀*/ LEFT              &kp /*=▼*/ DOWN_ARROW        &kp /*=▶*/ RIGHT             &trans                       &trans
+&trans  &trans                          &kp /*=BOT-LFT*/ LC(LA(J))     &kp /*=▼-BOT*/ LC(LA(DOWN))   &kp /*=BOT-RGT*/ LC(LA(K))     &trans                     &trans                  &trans   &trans                       &trans                       &trans                       &trans                       &trans                       &trans
+                                                                        &trans                        &trans                         &trans                     &trans                  &trans   &trans                       &trans                       &trans
             >;
         };
 
